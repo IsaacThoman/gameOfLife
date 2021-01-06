@@ -1,8 +1,14 @@
 ﻿Public Class Form1
 
     Dim cells(35, 35) As Boolean
+    Dim iterationCount As Integer
+    Dim timerOn As Boolean
+
 
     Function doIteration()
+        iterationCount += 1
+        iterationLabel.Text = "Iterations: " & iterationCount
+
 
         For fillerx = 2 To 34
             For fillery = 2 To 34
@@ -33,6 +39,7 @@
                     neighbors += 1
                 End If
 
+                Dim killThem(34, 34) As Boolean
 
                 If neighbors = 0 Or neighbors = 1 Or neighbors > 3 Then
                     cells(fillerx, fillery) = False
@@ -141,5 +148,26 @@
             Next
         Next
         renderer()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        If timerOn = True Then
+            doIteration()
+            renderer()
+            Timer1.Enabled = True
+
+        Else
+            Timer1.Enabled = False
+        End If
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        timerOn = True
+        Timer1.Enabled = True
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        timerOn = False
+        Timer1.Enabled = False
     End Sub
 End Class
