@@ -9,11 +9,13 @@
         iterationCount += 1
         iterationLabel.Text = "Iterations: " & iterationCount
 
-
+        Dim killThem(34, 34) As Boolean
+        Dim createThem(34, 34) As Boolean
+        Dim neighbors As Integer = 0
         For fillerx = 2 To 34
             For fillery = 2 To 34
-                Dim neighbors As Integer = 0
 
+                neighbors = 0
                 If cells(fillerx - 1, fillery) = True Then
                     neighbors += 1
                 End If
@@ -39,20 +41,48 @@
                     neighbors += 1
                 End If
 
-                Dim killThem(34, 34) As Boolean
+                If cells(fillerx, fillery) = True Then
 
-                If neighbors = 0 Or neighbors = 1 Or neighbors > 3 Then
-                    cells(fillerx, fillery) = False
+                    If neighbors < 2 Then
+                        killThem(fillerx, fillery) = True
+                    End If
+
+                    If neighbors = 2 Or neighbors = 3 Then
+                        createThem(fillerx, fillery) = True
+                        'I did this beacuse I'm upset.
+                    End If
+
+                    If neighbors > 3 Then
+                        killThem(fillerx, fillery) = True
+                    End If
+
+                Else
+
+                    If neighbors = 3 Then
+                        createThem(fillerx, fillery) = True
+                    End If
+
                 End If
 
-                If neighbors = 3 Then
-                    cells(fillerx, fillery) = True
-                End If
+
+                For fillerx2 = 1 To 34
+                    For fillery2 = 1 To 34
+
+                        If killThem(fillerx2, fillery2) = True Then
+                            cells(fillerx2, fillery2) = False
+                        End If
+                        If createThem(fillerx2, fillery2) = True Then
+                            cells(fillerx2, fillery2) = True
+                        End If
+                    Next
+                Next
+
+
 
 
             Next
-        Next
-
+                Next
+        ' logic is done
 
 
 
