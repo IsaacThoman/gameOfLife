@@ -9,6 +9,57 @@
     Dim overpopulation As Boolean = True
     Dim birth As Boolean = True
 
+
+    Function saveboard() As String
+        Dim savedString As String = ""
+
+        For saverx As Integer = 1 To 35
+            For savery As Integer = 1 To 35
+
+                If cells(saverx, savery) = True Then
+                    savedString = savedString & "1"
+                Else
+                    savedString = savedString & "0"
+                End If
+            Next
+            ' savedString = savedString & vbNewLine
+        Next
+        saveboard = savedString
+    End Function
+
+    Function clearboard()
+        iterationCount = 0
+        iterationLabel.Text = "Iterations: 0"
+        For clearX = 1 To 35
+            For clearY = 1 To 35
+                cells(clearX, clearY) = False
+
+
+
+
+            Next
+        Next
+    End Function
+
+
+    Function loadBoard(input As String)
+        Dim counter As Integer = 0
+
+        For loaderX As Integer = 1 To 35
+            For loaderY As Integer = 1 To 35
+                counter += 1
+                If GetChar(input, counter) = "1" Then
+                    cells(loaderX, loaderY) = True
+                Else
+                    cells(loaderX, loaderY) = False
+                End If
+            Next
+        Next
+
+
+    End Function
+
+
     Function doIteration()
         Dim neighbors(35, 35) As Integer
         For fillerx As Integer = 1 To 35
@@ -173,15 +224,7 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        For clearX = 1 To 35
-            For clearY = 1 To 35
-                cells(clearX, clearY) = False
-
-
-
-
-            Next
-        Next
+        clearboard()
         renderer()
     End Sub
 
@@ -292,5 +335,21 @@
         Else
             birth = False
         End If
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        renderer()
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        TextBox1.Text = saveboard()
+
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        loadBoard(TextBox1.Text)
+
+
+
     End Sub
 End Class
