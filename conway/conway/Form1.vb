@@ -3,7 +3,7 @@
     Dim cells(36, 36) As Boolean
     Dim iterationCount As Integer
     Dim timerOn As Boolean
-
+    Dim superSpeedy As Integer = 1
 
     Function doIteration()
         Dim neighbors(35, 35) As Integer
@@ -177,7 +177,11 @@
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         If timerOn = True Then
-            doIteration()
+
+            For repetition = 1 To superSpeedy
+                doIteration()
+            Next
+
             renderer()
             Timer1.Enabled = True
 
@@ -223,5 +227,13 @@
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Me.Close()
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked = True Then
+            superSpeedy = 10
+        Else
+            superSpeedy = 1
+        End If
     End Sub
 End Class
