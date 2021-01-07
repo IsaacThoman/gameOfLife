@@ -1,14 +1,76 @@
 ﻿Public Class Form1
 
-    Dim cells(35, 35) As Boolean
+    Dim cells(36, 36) As Boolean
     Dim iterationCount As Integer
     Dim timerOn As Boolean
 
 
     Function doIteration()
+        Dim neighbors(35, 35) As Integer
+        For fillerx As Integer = 1 To 35
+            For fillery As Integer = 1 To 35
 
-        For fillerx = 1 To 35
-            For fillery = 1 To 35
+                Dim myX As Integer = fillerx
+                Dim myY As Integer = fillery
+
+
+                If cells(myX + 1, myY + 1) = True Then
+                    neighbors(myX, myY) += 1
+                End If
+                If cells(myX + 1, myY) = True Then
+                    neighbors(myX, myY) += 1
+                End If
+                If cells(myX + 1, myY - 1) = True Then
+                    neighbors(myX, myY) += 1
+                End If
+                If cells(myX, myY - 1) = True Then
+                    neighbors(myX, myY) += 1
+                End If
+                If cells(myX - 1, myY - 1) = True Then
+                    neighbors(myX, myY) += 1
+                End If
+                If cells(myX - 1, myY) = True Then
+                    neighbors(myX, myY) += 1
+                End If
+                If cells(myX - 1, myY + 1) = True Then
+                    neighbors(myX, myY) += 1
+                End If
+                If cells(myX, myY + 1) = True Then
+                    neighbors(myX, myY) += 1
+                End If
+
+
+
+            Next
+        Next
+
+
+        For changerx As Integer = 1 To 35
+            For changery As Integer = 1 To 35
+
+                Dim myX As Integer = changerx
+                Dim myY As Integer = changery
+
+                If cells(myX, myY) = True And neighbors(myX, myY) < 2 Then
+                    cells(myX, myY) = False
+                End If
+
+                If cells(myX, myY) = True And neighbors(myX, myY) = 2 Then
+                    cells(myX, myY) = True
+                End If
+
+                If cells(myX, myY) = True And neighbors(myX, myY) = 3 Then
+                    cells(myX, myY) = True
+                End If
+
+                If cells(myX, myY) = True And neighbors(myX, myY) > 3 Then
+                    cells(myX, myY) = False
+                End If
+
+                If cells(myX, myY) = False And neighbors(myX, myY) = 3 Then
+                    cells(myX, myY) = True
+                End If
+
 
 
 
@@ -17,6 +79,8 @@
             Next
         Next
 
+        iterationCount += 1
+        iterationLabel.Text = "Iterations: " & iterationCount
 
     End Function
 
