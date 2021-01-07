@@ -6,84 +6,16 @@
 
 
     Function doIteration()
-        iterationCount += 1
-        iterationLabel.Text = "Iterations: " & iterationCount
 
-        Dim killThem(34, 34) As Boolean
-        Dim createThem(34, 34) As Boolean
-        Dim neighbors As Integer = 0
-        For fillerx = 2 To 34
-            For fillery = 2 To 34
+        For fillerx = 1 To 35
+            For fillery = 1 To 35
 
-                neighbors = 0
-                If cells(fillerx - 1, fillery) = True Then
-                    neighbors += 1
-                End If
-                If cells(fillerx + 1, fillery) = True Then
-                    neighbors += 1
-                End If
-                If cells(fillerx - 1, fillery + 1) = True Then
-                    neighbors += 1
-                End If
-                If cells(fillerx - 1, fillery - 1) = True Then
-                    neighbors += 1
-                End If
-                If cells(fillerx + 1, fillery - 1) = True Then
-                    neighbors += 1
-                End If
-                If cells(fillerx + 1, fillery + 1) = True Then
-                    neighbors += 1
-                End If
-                If cells(fillerx, fillery + 1) = True Then
-                    neighbors += 1
-                End If
-                If cells(fillerx, fillery - 1) = True Then
-                    neighbors += 1
-                End If
-
-                If cells(fillerx, fillery) = True Then
-
-                    If neighbors < 2 Then
-                        killThem(fillerx, fillery) = True
-                    End If
-
-                    If neighbors = 2 Or neighbors = 3 Then
-                        createThem(fillerx, fillery) = True
-                        'I did this beacuse I'm upset.
-                    End If
-
-                    If neighbors > 3 Then
-                        killThem(fillerx, fillery) = True
-                    End If
-
-                Else
-
-                    If neighbors = 3 Then
-                        createThem(fillerx, fillery) = True
-                    End If
-
-                End If
-
-
-                For fillerx2 = 1 To 34
-                    For fillery2 = 1 To 34
-
-                        If killThem(fillerx2, fillery2) = True Then
-                            cells(fillerx2, fillery2) = False
-                        End If
-                        If createThem(fillerx2, fillery2) = True Then
-                            cells(fillerx2, fillery2) = True
-                        End If
-                    Next
-                Next
 
 
 
 
             Next
-                Next
-        ' logic is done
-
+        Next
 
 
     End Function
@@ -124,7 +56,6 @@
                 If fillerx = 1 Or fillery = 1 Or fillerx = 35 Or fillery = 35 Then
                     surface.FillRectangle(solidBrushBlack, rects(fillerx, fillery))
                 End If
-
 
 
             Next

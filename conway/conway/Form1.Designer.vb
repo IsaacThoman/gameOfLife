@@ -90,7 +90,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Name = "Form1"
-        Me.Text = "Game of Life (but asynchronous)"
+        Me.Text = "Game of Life (but asynchronous or something)"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
