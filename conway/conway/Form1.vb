@@ -195,4 +195,33 @@
         timerOn = False
         Timer1.Enabled = False
     End Sub
+
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+        If RadioButton1.Checked Then
+            Timer1.Interval = 1000
+        End If
+
+    End Sub
+
+    Private Sub RadioButton10_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton10.CheckedChanged
+        If RadioButton10.Checked Then
+            Timer1.Interval = 200
+        End If
+    End Sub
+
+    Private Sub RadioButton20_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton20.CheckedChanged
+        If RadioButton20.Checked Then
+            Timer1.Interval = 100
+        End If
+    End Sub
+
+    Private Sub RadioButton100_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton100.CheckedChanged
+        If RadioButton20.Checked Then
+            Timer1.Interval = 1
+        End If
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Me.Close()
+    End Sub
 End Class

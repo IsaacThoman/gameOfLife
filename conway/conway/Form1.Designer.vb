@@ -29,6 +29,13 @@ Partial Class Form1
         Me.Button4 = New System.Windows.Forms.Button()
         Me.iterationLabel = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton10 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton20 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton100 = New System.Windows.Forms.RadioButton()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
@@ -42,7 +49,7 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(25, 102)
+        Me.Button2.Location = New System.Drawing.Point(25, 73)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 1
@@ -78,19 +85,91 @@ Partial Class Form1
         '
         'Timer1
         '
+        Me.Timer1.Interval = 1000
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.RadioButton100)
+        Me.GroupBox1.Controls.Add(Me.RadioButton20)
+        Me.GroupBox1.Controls.Add(Me.RadioButton10)
+        Me.GroupBox1.Controls.Add(Me.RadioButton1)
+        Me.GroupBox1.Location = New System.Drawing.Point(25, 172)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(173, 123)
+        Me.GroupBox1.TabIndex = 5
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Speed"
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(6, 19)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(93, 17)
+        Me.RadioButton1.TabIndex = 0
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "1 iteration/sec"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton10
+        '
+        Me.RadioButton10.AutoSize = True
+        Me.RadioButton10.Checked = True
+        Me.RadioButton10.Location = New System.Drawing.Point(6, 42)
+        Me.RadioButton10.Name = "RadioButton10"
+        Me.RadioButton10.Size = New System.Drawing.Size(98, 17)
+        Me.RadioButton10.TabIndex = 1
+        Me.RadioButton10.TabStop = True
+        Me.RadioButton10.Text = "5 iterations/sec"
+        Me.RadioButton10.UseVisualStyleBackColor = True
+        '
+        'RadioButton20
+        '
+        Me.RadioButton20.AutoSize = True
+        Me.RadioButton20.Location = New System.Drawing.Point(6, 65)
+        Me.RadioButton20.Name = "RadioButton20"
+        Me.RadioButton20.Size = New System.Drawing.Size(104, 17)
+        Me.RadioButton20.TabIndex = 2
+        Me.RadioButton20.TabStop = True
+        Me.RadioButton20.Text = "10 iterations/sec"
+        Me.RadioButton20.UseVisualStyleBackColor = True
+        '
+        'RadioButton100
+        '
+        Me.RadioButton100.AutoSize = True
+        Me.RadioButton100.Location = New System.Drawing.Point(6, 88)
+        Me.RadioButton100.Name = "RadioButton100"
+        Me.RadioButton100.Size = New System.Drawing.Size(66, 17)
+        Me.RadioButton100.TabIndex = 3
+        Me.RadioButton100.TabStop = True
+        Me.RadioButton100.Text = "unlimited"
+        Me.RadioButton100.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(25, 102)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.TabIndex = 6
+        Me.Button5.Text = "Exit"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(884, 611)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.iterationLabel)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Name = "Form1"
-        Me.Text = "Game of Life (but asynchronous or something)"
+        Me.Text = "Game of Life"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -102,4 +181,10 @@ Partial Class Form1
     Friend WithEvents Button4 As Button
     Friend WithEvents iterationLabel As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents RadioButton100 As RadioButton
+    Friend WithEvents RadioButton20 As RadioButton
+    Friend WithEvents RadioButton10 As RadioButton
+    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents Button5 As Button
 End Class
