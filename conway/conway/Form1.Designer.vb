@@ -36,12 +36,17 @@ Partial Class Form1
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.RadioButton5 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
@@ -173,6 +178,37 @@ Partial Class Form1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Iterations/frame"
         '
+        'RadioButton5
+        '
+        Me.RadioButton5.AutoSize = True
+        Me.RadioButton5.Location = New System.Drawing.Point(6, 89)
+        Me.RadioButton5.Name = "RadioButton5"
+        Me.RadioButton5.Size = New System.Drawing.Size(88, 17)
+        Me.RadioButton5.TabIndex = 3
+        Me.RadioButton5.TabStop = True
+        Me.RadioButton5.Text = "1000 it/frame"
+        Me.RadioButton5.UseVisualStyleBackColor = True
+        '
+        'RadioButton4
+        '
+        Me.RadioButton4.AutoSize = True
+        Me.RadioButton4.Location = New System.Drawing.Point(6, 66)
+        Me.RadioButton4.Name = "RadioButton4"
+        Me.RadioButton4.Size = New System.Drawing.Size(76, 17)
+        Me.RadioButton4.TabIndex = 2
+        Me.RadioButton4.Text = "10 it/frame"
+        Me.RadioButton4.UseVisualStyleBackColor = True
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(6, 43)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(70, 17)
+        Me.RadioButton3.TabIndex = 1
+        Me.RadioButton3.Text = "5 it/frame"
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
@@ -185,42 +221,60 @@ Partial Class Form1
         Me.RadioButton2.Text = "1 it/frame"
         Me.RadioButton2.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'GroupBox4
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(6, 43)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(70, 17)
-        Me.RadioButton3.TabIndex = 1
-        Me.RadioButton3.Text = "5 it/frame"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.GroupBox4.Controls.Add(Me.CheckBox3)
+        Me.GroupBox4.Controls.Add(Me.CheckBox2)
+        Me.GroupBox4.Controls.Add(Me.CheckBox1)
+        Me.GroupBox4.Location = New System.Drawing.Point(25, 426)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(173, 100)
+        Me.GroupBox4.TabIndex = 10
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Rules"
         '
-        'RadioButton4
+        'CheckBox1
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(6, 66)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(76, 17)
-        Me.RadioButton4.TabIndex = 2
-        Me.RadioButton4.Text = "10 it/frame"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Checked = True
+        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox1.Location = New System.Drawing.Point(7, 20)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(157, 17)
+        Me.CheckBox1.TabIndex = 0
+        Me.CheckBox1.Text = "Death from underpopulation"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
-        'RadioButton5
+        'CheckBox2
         '
-        Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Location = New System.Drawing.Point(6, 89)
-        Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(88, 17)
-        Me.RadioButton5.TabIndex = 3
-        Me.RadioButton5.TabStop = True
-        Me.RadioButton5.Text = "1000 it/frame"
-        Me.RadioButton5.UseVisualStyleBackColor = True
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Checked = True
+        Me.CheckBox2.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox2.Location = New System.Drawing.Point(6, 43)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(151, 17)
+        Me.CheckBox2.TabIndex = 1
+        Me.CheckBox2.Text = "Death from overpopulation"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Checked = True
+        Me.CheckBox3.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBox3.Location = New System.Drawing.Point(6, 66)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(47, 17)
+        Me.CheckBox3.TabIndex = 2
+        Me.CheckBox3.Text = "Birth"
+        Me.CheckBox3.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(884, 611)
+        Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.GroupBox1)
@@ -235,6 +289,8 @@ Partial Class Form1
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -257,4 +313,8 @@ Partial Class Form1
     Friend WithEvents RadioButton4 As RadioButton
     Friend WithEvents RadioButton3 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents CheckBox2 As CheckBox
 End Class

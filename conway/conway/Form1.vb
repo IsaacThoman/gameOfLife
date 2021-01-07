@@ -5,6 +5,10 @@
     Dim timerOn As Boolean
     Dim superSpeedy As Integer = 1
 
+    Dim underpopulation As Boolean = True
+    Dim overpopulation As Boolean = True
+    Dim birth As Boolean = True
+
     Function doIteration()
         Dim neighbors(35, 35) As Integer
         For fillerx As Integer = 1 To 35
@@ -52,7 +56,9 @@
                 Dim myY As Integer = changery
 
                 If cells(myX, myY) = True And neighbors(myX, myY) < 2 Then
-                    cells(myX, myY) = False
+                    If underpopulation = True Then
+                        cells(myX, myY) = False
+                    End If
                 End If
 
                 If cells(myX, myY) = True And neighbors(myX, myY) = 2 Then
@@ -64,11 +70,15 @@
                 End If
 
                 If cells(myX, myY) = True And neighbors(myX, myY) > 3 Then
-                    cells(myX, myY) = False
+                    If overpopulation = True Then
+                        cells(myX, myY) = False
+                    End If
                 End If
 
                 If cells(myX, myY) = False And neighbors(myX, myY) = 3 Then
-                    cells(myX, myY) = True
+                    If birth = True Then
+                        cells(myX, myY) = True
+                    End If
                 End If
 
 
@@ -257,6 +267,30 @@
     Private Sub RadioButton5_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton5.CheckedChanged
         If RadioButton5.Checked = True Then
             superSpeedy = 1000
+        End If
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked Then
+            underpopulation = True
+        Else
+            underpopulation = False
+        End If
+    End Sub
+
+    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
+        If CheckBox2.Checked Then
+            overpopulation = True
+        Else
+            overpopulation = False
+        End If
+    End Sub
+
+    Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
+        If CheckBox3.Checked Then
+            birth = True
+        Else
+            birth = False
         End If
     End Sub
 End Class
