@@ -229,11 +229,34 @@
         Me.Close()
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        If CheckBox1.Checked = True Then
-            superSpeedy = 10
-        Else
+
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
+    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
+        If RadioButton2.Checked = True Then
             superSpeedy = 1
+        End If
+
+    End Sub
+
+    Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton3.CheckedChanged
+        If RadioButton3.Checked = True Then
+            superSpeedy = 5
+        End If
+    End Sub
+
+    Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton4.CheckedChanged
+        If RadioButton4.Checked = True Then
+            superSpeedy = 10
+        End If
+    End Sub
+
+    Private Sub RadioButton5_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton5.CheckedChanged
+        If RadioButton5.Checked = True Then
+            superSpeedy = 1000
         End If
     End Sub
 End Class

@@ -35,8 +35,13 @@ Partial Class Form1
         Me.RadioButton10 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
@@ -117,10 +122,10 @@ Partial Class Form1
         Me.RadioButton20.AutoSize = True
         Me.RadioButton20.Location = New System.Drawing.Point(6, 65)
         Me.RadioButton20.Name = "RadioButton20"
-        Me.RadioButton20.Size = New System.Drawing.Size(104, 17)
+        Me.RadioButton20.Size = New System.Drawing.Size(93, 17)
         Me.RadioButton20.TabIndex = 2
         Me.RadioButton20.TabStop = True
-        Me.RadioButton20.Text = "10 iterations/sec"
+        Me.RadioButton20.Text = "10 frames/sec"
         Me.RadioButton20.UseVisualStyleBackColor = True
         '
         'RadioButton10
@@ -129,10 +134,10 @@ Partial Class Form1
         Me.RadioButton10.Checked = True
         Me.RadioButton10.Location = New System.Drawing.Point(6, 42)
         Me.RadioButton10.Name = "RadioButton10"
-        Me.RadioButton10.Size = New System.Drawing.Size(98, 17)
+        Me.RadioButton10.Size = New System.Drawing.Size(87, 17)
         Me.RadioButton10.TabIndex = 1
         Me.RadioButton10.TabStop = True
-        Me.RadioButton10.Text = "5 iterations/sec"
+        Me.RadioButton10.Text = "5 frames/sec"
         Me.RadioButton10.UseVisualStyleBackColor = True
         '
         'RadioButton1
@@ -140,10 +145,10 @@ Partial Class Form1
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Location = New System.Drawing.Point(6, 19)
         Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(93, 17)
+        Me.RadioButton1.Size = New System.Drawing.Size(82, 17)
         Me.RadioButton1.TabIndex = 0
         Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "1 iteration/sec"
+        Me.RadioButton1.Text = "1 frame/sec"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '
         'Button5
@@ -155,22 +160,68 @@ Partial Class Form1
         Me.Button5.Text = "Exit"
         Me.Button5.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'GroupBox2
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(25, 301)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(116, 17)
-        Me.CheckBox1.TabIndex = 7
-        Me.CheckBox1.Text = "Extra speedy mode"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.GroupBox2.Controls.Add(Me.RadioButton5)
+        Me.GroupBox2.Controls.Add(Me.RadioButton4)
+        Me.GroupBox2.Controls.Add(Me.RadioButton3)
+        Me.GroupBox2.Controls.Add(Me.RadioButton2)
+        Me.GroupBox2.Location = New System.Drawing.Point(25, 301)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(173, 119)
+        Me.GroupBox2.TabIndex = 8
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Iterations/frame"
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Checked = True
+        Me.RadioButton2.Location = New System.Drawing.Point(6, 20)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(70, 17)
+        Me.RadioButton2.TabIndex = 0
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "1 it/frame"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Location = New System.Drawing.Point(6, 43)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(70, 17)
+        Me.RadioButton3.TabIndex = 1
+        Me.RadioButton3.Text = "5 it/frame"
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        '
+        'RadioButton4
+        '
+        Me.RadioButton4.AutoSize = True
+        Me.RadioButton4.Location = New System.Drawing.Point(6, 66)
+        Me.RadioButton4.Name = "RadioButton4"
+        Me.RadioButton4.Size = New System.Drawing.Size(76, 17)
+        Me.RadioButton4.TabIndex = 2
+        Me.RadioButton4.Text = "10 it/frame"
+        Me.RadioButton4.UseVisualStyleBackColor = True
+        '
+        'RadioButton5
+        '
+        Me.RadioButton5.AutoSize = True
+        Me.RadioButton5.Location = New System.Drawing.Point(6, 89)
+        Me.RadioButton5.Name = "RadioButton5"
+        Me.RadioButton5.Size = New System.Drawing.Size(88, 17)
+        Me.RadioButton5.TabIndex = 3
+        Me.RadioButton5.TabStop = True
+        Me.RadioButton5.Text = "1000 it/frame"
+        Me.RadioButton5.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(884, 611)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.iterationLabel)
@@ -182,6 +233,8 @@ Partial Class Form1
         Me.Text = "Game of Life"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -199,5 +252,9 @@ Partial Class Form1
     Friend WithEvents RadioButton10 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents Button5 As Button
-    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents RadioButton5 As RadioButton
+    Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents RadioButton2 As RadioButton
 End Class
